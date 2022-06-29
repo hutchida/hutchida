@@ -1340,10 +1340,10 @@
     "array-includes" "^3.1.4"
     "object.assign" "^4.1.2"
 
-"knit-hutchida@^1.0.9":
-  "integrity" "sha512-SE9JWAMq7wigdcvucQsLYpnhqqQNe+5KLvofYacSq12LSVXlXlWwRQMed2vrWLR6BFnihwSaor3IMWt6IBJAAQ=="
-  "resolved" "https://registry.npmjs.org/knit-hutchida/-/knit-hutchida-1.0.9.tgz"
-  "version" "1.0.9"
+"knit-hutchida@^1.0.12":
+  "integrity" "sha512-/ir0dRCjAAumjVrtoB4q0maXaDE0+zkL3ufqIef6LQX0L4k4Sb8HeZkzDv2nVulL5SOTfHz3uR5h4hA6Yrgx4A=="
+  "resolved" "https://registry.npmjs.org/knit-hutchida/-/knit-hutchida-1.0.12.tgz"
+  "version" "1.0.12"
   dependencies:
     "babel" "^6.23.0"
     "eslint-config-airbnb" "^19.0.4"
