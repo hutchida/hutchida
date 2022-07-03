@@ -13,8 +13,8 @@ import { getPageData } from '../lib/getters/getPageData';
  */
 
 export const getStaticProps: GetStaticProps = async () => {
-  const pageData = await getPageData('home');
-
+  // const pageData = await getPageData('home');
+  const pageData = null;
   return {
     props: {
       pageData: pageData || null,
