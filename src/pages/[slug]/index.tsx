@@ -44,6 +44,8 @@ const Home = (props: any) => {
   const components = props?.pageData?.body
   return (
     <div className={styles.container}>
+      <script src="//app.storyblok.com/f/storyblok-v2-latest.js" type="text/javascript">
+      </script>
       <Head>
         <title>HUTCHIDA</title>
         <meta name="description" content="HUTCHIDA" />
