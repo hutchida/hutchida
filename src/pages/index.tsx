@@ -14,7 +14,6 @@ import { getPageData } from '../lib/getters/getPageData';
 
 export const getStaticProps: GetStaticProps = async () => {
   const pageData = await getPageData('home');
-  console.log('pageData', pageData)
 
   return {
     props: {
@@ -24,8 +23,6 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home = (props: any) => {
-  console.log('props', props)
-  const slideData = props?.pageData?.body[0]
   const components = props?.pageData?.body
   return (
     <div className={styles.container}>
@@ -40,16 +37,7 @@ const Home = (props: any) => {
         </h1>
         <PageComponentMapper components={components} />
         <Section>
-          <Slide
-            title={slideData.title}
-            description={slideData.description}
-            descriptionSize={slideData.descriptionSize}
-            bgImage={slideData.bgImage}
-            bgColor={slideData.bgColor}
-            slideWidth={slideData.slideWidth}
-            slideHeight={slideData.slideHeight}
-            spacing={slideData.spacing}
-          />
+          HIYA
         </Section>
         <Section className={styles.section}>
           <p className={styles.oneLiner}>{data?.oneLiner}</p>
