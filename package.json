@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "knit-hutchida": "^1.0.9",
+    "knit-hutchida": "^1.0.13",
     "next": "12.1.6",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "storyblok-js-client": "^4.5.5"
   },
   "devDependencies": {
     "@types/node": "17.0.40",

@@ -1,10 +1,32 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { Section } from 'knit-hutchida/lib'
 
-const Home: NextPage = () => {
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
+import { Section, EventsAccordion, Slide } from 'knit-hutchida/lib'
+import data from '../lib/cv.json'
+import { GetStaticProps } from "next";
+import PageComponentMapper from '../lib/mappers/pageComponentMapper'
+import { getPageData } from '../lib/getters/getPageData';
+/**
+ * When the user navigates to the root of the site this page will be delivered. It is hardcoded
+ * to fetch data for a page called 'homepage' in the cms
+ * @returns
+ */
+
+export const getStaticProps: GetStaticProps = async () => {
+  const pageData = await getPageData('home');
+  console.log('pageData', pageData)
+
+  return {
+    props: {
+      pageData: pageData || null,
+    },
+  };
+}
+
+const Home = (props: any) => {
+  console.log('props', props)
+  const slideData = props?.pageData?.body[0]
+  const components = props?.pageData?.body
   return (
     <div className={styles.container}>
       <Head>
@@ -12,61 +34,31 @@ const Home: NextPage = () => {
         <meta name="description" content="HUTCHIDA" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
         <h1 className={styles.title}>
           HUTCHIDA
         </h1>
-        <Section className={styles.section}>
-          <p className={styles.section}>e Recommended protections disabled.</p>
+        <PageComponentMapper components={components} />
+        <Section>
+          <Slide
+            title={slideData.title}
+            description={slideData.description}
+            descriptionSize={slideData.descriptionSize}
+            bgImage={slideData.bgImage}
+            bgColor={slideData.bgColor}
+            slideWidth={slideData.slideWidth}
+            slideHeight={slideData.slideHeight}
+            spacing={slideData.spacing}
+          />
         </Section>
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <Section className={styles.section}>
+          <p className={styles.oneLiner}>{data?.oneLiner}</p>
+        </Section>
+        <Section className={styles.section} bgColor={"lightblue"}>
+          <EventsAccordion {...{ props: { title: 'Experience' }, data: data.experience, }} />
+        </Section>
       </main>
-
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
       </footer>
     </div>
   )
