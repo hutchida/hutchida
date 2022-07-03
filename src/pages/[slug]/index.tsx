@@ -32,7 +32,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params?.slug as string;
   const pageData = await getPageData(slug || 'home');
-  console.log('pageData', pageData)
 
   return {
     props: {
@@ -42,8 +41,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 const Home = (props: any) => {
-  console.log('props', props)
-  const slideData = props?.pageData?.body[0]
   const components = props?.pageData?.body
   return (
     <div className={styles.container}>
