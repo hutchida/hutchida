@@ -11,7 +11,9 @@ const Storyblok = new StoryblokClient({
 export async function getPageData(slug: string) {
   let data;
   try {
-    data = await Storyblok.get(`cdn/stories/${slug}?cv=157041631`, {})
+    // put the cv back in when you want the data cached
+    // data = await Storyblok.get(`cdn/stories/${slug}?cv=157041632`, {})
+    data = await Storyblok.get(`cdn/stories/${slug}`, {})
   } catch (error: any) {
     console.log(error);
   }

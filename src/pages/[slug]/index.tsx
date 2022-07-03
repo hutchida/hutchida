@@ -53,28 +53,7 @@ const Home = (props: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          HUTCHIDA
-        </h1>
         <PageComponentMapper components={components} />
-        <Section>
-          <Slide
-            title={slideData.title}
-            description={slideData.description}
-            descriptionSize={slideData.descriptionSize}
-            bgImage={slideData.bgImage}
-            bgColor={slideData.bgColor}
-            slideWidth={slideData.slideWidth}
-            slideHeight={slideData.slideHeight}
-            spacing={slideData.spacing}
-          />
-        </Section>
-        <Section className={styles.section}>
-          <p className={styles.oneLiner}>{data?.oneLiner}</p>
-        </Section>
-        <Section className={styles.section} bgColor={"lightblue"}>
-          <EventsAccordion {...{ props: { title: 'Experience' }, data: data.experience, }} />
-        </Section>
       </main>
       <footer className={styles.footer}>
       </footer>
