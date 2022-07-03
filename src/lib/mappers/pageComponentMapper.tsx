@@ -27,18 +27,15 @@ const PageComponentMapper = ({
 }: {
   components: any;
 }): JSX.Element => {
-  console.log('components', components)
   // If you print the components list here to the browser console and you see a component
   // in the array without any data, it will be because the query is non-existent
   // If the page gives you a 404 it may well be because a query is incorrect
   return (
     <>
       {components?.map((component: any, index: number) => {
-        console.log('component.component', component.component)
         const componentName =
           (componentsMap as any)[component.component];
         let componentOutput;
-        console.log('componentName', componentName)
         if (componentName) {
           const CurrentBlock = Components[componentName];
           if (!CurrentBlock) {
