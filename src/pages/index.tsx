@@ -35,7 +35,8 @@ const Home = (props: any) => {
         <h1 className={styles.title}>
           HUTCHIDA
         </h1>
-        <PageComponentMapper components={components} />
+        <p>...under construction...</p>
+        {/* <PageComponentMapper components={components} />
         <Section>
           HIYA
         </Section>
@@ -44,7 +45,7 @@ const Home = (props: any) => {
         </Section>
         <Section className={styles.section} bgColor={"lightblue"}>
           <EventsAccordion {...{ props: { title: 'Experience' }, data: data.experience, }} />
-        </Section>
+        </Section> */}
       </main>
       <footer className={styles.footer}>
       </footer>
