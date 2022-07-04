@@ -9,6 +9,7 @@ const Storyblok = new StoryblokClient({
 })
 
 export async function getPageData(slug: string) {
+  
   let data;
   try {
     // put the cv back in when you want the data cached
