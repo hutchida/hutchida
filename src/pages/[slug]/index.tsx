@@ -8,6 +8,13 @@ import { GetStaticPaths } from 'next';
 import PageComponentMapper from '../../lib/mappers/pageComponentMapper'
 import { getPageData } from '../../lib/getters/getPageData';
 import { getPublishedPagesPaths } from "../../lib/getters/getPageData";
+import {
+  useStoryblokState,
+  getStoryblokApi,
+  StoryblokComponent,
+  storyblokEditable,
+  SbBlokData,
+} from '@storyblok/react';
 
 /**
  * When the user navigates to the root of the site this page will be delivered. It is hardcoded
@@ -29,31 +36,31 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params?.slug as string;
-  const pageData = await getPageData(slug || 'home');
+  // const pageData = await getPageData(slug || 'home');
 
+  let params = {
+    version: 'published', // or 'draft'
+  };
+
+  const storyblokApi = getStoryblokApi();
+  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, params);
   return {
     props: {
-      pageData: pageData || null,
+      content: data ? data.story.content : false,
+      key: data ? data.story.id : false,
     },
   };
 }
 
-const Home = (props: any) => {
-  const components = props?.pageData?.body
+const Home = ({ content }: any) => {
+  content = useStoryblokState(content);
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>HUTCHIDA</title>
-        <meta name="description" content="HUTCHIDA" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={styles.main}>
-        <PageComponentMapper components={components} />
-      </main>
-      <footer className={styles.footer}>
-      </footer>
-    </div>
-  )
+    <main className="px-6" {...storyblokEditable(content)} key={content._uid}>
+      {content.body.map((nestedBlok: SbBlokData) => (
+        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+      ))}
+    </main>
+  );
 }
 
 export default Home
