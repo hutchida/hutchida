@@ -1,6 +1,6 @@
 import React from "react";
-// import { IComponents } from "../../types/IComponents";
-// import dynamic from "next/dynamic";
+import { storyblokInit, apiPlugin } from '@storyblok/react';
+
 import {
   Section,
   EventsAccordion,
@@ -18,6 +18,13 @@ const componentsMap = {
   eventsAccordion: "EventsAccordion",
   slide: "Slide",
 };
+
+storyblokInit({
+  accessToken: '1JIP9C8i6yPABNQVN9aWIwtt',
+  use: [apiPlugin],
+  components: Components,
+});
+
 
 /**
  * Component mapper for generic pages.

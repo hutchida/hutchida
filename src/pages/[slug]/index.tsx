@@ -14,8 +14,6 @@ import { getPublishedPagesPaths } from "../../lib/getters/getPageData";
  * to fetch data for a page called 'homepage' in the cms
  * @returns
  */
-
-
 export const getStaticPaths: GetStaticPaths = async () => {
   const all_paths = await getPublishedPagesPaths();
   const paths = all_paths.map((page: any) => ({
@@ -44,8 +42,6 @@ const Home = (props: any) => {
   const components = props?.pageData?.body
   return (
     <div className={styles.container}>
-      <script src="//app.storyblok.com/f/storyblok-v2-latest.js" type="text/javascript">
-      </script>
       <Head>
         <title>HUTCHIDA</title>
         <meta name="description" content="HUTCHIDA" />
