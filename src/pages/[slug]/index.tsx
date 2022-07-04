@@ -42,6 +42,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
     version: 'published', // or 'draft'
   };
 
+  if (context.preview) {
+    params.version = 'draft';
+  }
+
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, params);
 
@@ -49,16 +53,17 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       story: data ? data.story : false,
       key: data ? data.story.id : false,
+      preview: context.preview || false,
     },
+    revalidate: 3600,
   };
 }
 
-const Home = ({ story }: any) => {
-  story = useStoryblokState(story);
+const Home = ({ story, preview }: any) => {
+  story = useStoryblokState(story, {}, preview);
   return (
     <main className="px-6" >
       <StoryblokComponent blok={story.content} />
-
     </main>
   );
 }
