@@ -5,10 +5,12 @@ import { storyblokInit, apiPlugin } from '@storyblok/react';
 
 import Feature from '../components/Feature';
 import Slide from '../components/Slide';
+import Page from '../components/Page';
 
 const components = {
   feature: Feature,
   slide: Slide,
+  page: Page,
 };
 
 storyblokInit({

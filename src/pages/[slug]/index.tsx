@@ -44,21 +44,21 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, params);
+
   return {
     props: {
-      content: data ? data.story.content : false,
+      story: data ? data.story : false,
       key: data ? data.story.id : false,
     },
   };
 }
 
-const Home = ({ content }: any) => {
-  content = useStoryblokState(content);
+const Home = ({ story }: any) => {
+  story = useStoryblokState(story);
   return (
-    <main className="px-6" {...storyblokEditable(content)} key={content._uid}>
-      {content.body.map((nestedBlok: SbBlokData) => (
-        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
-      ))}
+    <main className="px-6" >
+      <StoryblokComponent blok={story.content} />
+
     </main>
   );
 }
