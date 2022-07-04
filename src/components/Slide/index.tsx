@@ -8,7 +8,6 @@ import {
 } from './styles';
 
 export const Slide = ({ blok }: ISlide) => {
-
     return (
         <Container
             {...storyblokEditable(blok)}
