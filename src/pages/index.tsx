@@ -36,7 +36,7 @@ const Home = (props: any) => {
           profilePic={'images/profilepic.jpeg'}
           subtitle={'Frontend Developer'}
           title={'Daniel Hutchings'}
-          oneliner={'Frontend Developer, DIY Fundamentalist, dreams in JSON...'}
+          oneliner={'Hands-on Frontend Developer, DIY Fundamentalist, dreams in JSON...'}
           bgColor={'#ffffff'}
           socials={[
             {
