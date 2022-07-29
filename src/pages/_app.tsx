@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 
+import 'knit-hutchida/lib/style.css'
 import { storyblokInit, apiPlugin } from '@storyblok/react';
 
 import Feature from '../components/Feature';

@@ -644,9 +644,9 @@
   "version" "1.0.0"
 
 "caniuse-lite@^1.0.30001332":
-  "integrity" "sha512-q6ibZUO2t88QCIPayP/euuDREq+aMAxFE5S70PkrLh0iTDj/zEhgvJRKC2+CvXY6EWc6oQwUR48lL5vCW6jiXQ=="
-  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001346.tgz"
-  "version" "1.0.30001346"
+  "integrity" "sha512-pJYArGHrPp3TUqQzFYRmP/lwJlj8RCbVe3Gd3eJQkAV8SAC6b19XS9BjMvRdvaS8RMkaTN8ZhoHP6S1y8zzwEQ=="
+  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001373.tgz"
+  "version" "1.0.30001373"
 
 "chalk@^2.0.0":
   "integrity" "sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ=="
@@ -1845,10 +1845,10 @@
   dependencies:
     "json-buffer" "3.0.0"
 
-"knit-hutchida@^1.0.13":
-  "integrity" "sha512-9vDqLt0vtJjfDVh8KC2T3RBkdzo7rpkCjX+jAtiiF1ay/lSSeuzZIo3A3KMX4Tgmcrj++GNWJl8tQ4Hb5S3Ekg=="
-  "resolved" "https://registry.npmjs.org/knit-hutchida/-/knit-hutchida-1.0.13.tgz"
-  "version" "1.0.13"
+"knit-hutchida@^1.0.21":
+  "integrity" "sha512-TOa2IPdabXYvQTmZjBQzJ0lwzscc98/Yv34UT/odf9RPcu9BasWtEG3kexdm5TXH/Hz/hp205PUOrljc1q+DXw=="
+  "resolved" "https://registry.npmjs.org/knit-hutchida/-/knit-hutchida-1.0.21.tgz"
+  "version" "1.0.21"
   dependencies:
     "babel" "^6.23.0"
     "eslint-config-airbnb" "^19.0.4"

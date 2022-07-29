@@ -1,7 +1,7 @@
 
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Section, EventsAccordion, Slide } from 'knit-hutchida/lib'
+import { Section, EventsAccordion, Slide, Splash } from 'knit-hutchida/lib'
 import data from '../lib/cv.json'
 import { GetStaticProps } from "next";
 import PageComponentMapper from '../lib/mappers/pageComponentMapper'
@@ -32,11 +32,37 @@ const Home = (props: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <Splash
+          profilePic={'images/profilepic.jpeg'}
+          subtitle={'Frontend Developer'}
+          title={'Daniel Hutchings'}
+          oneliner={'Frontend Developer, DIY Fundamentalist, dreams in JSON...'}
+          bgColor={'#ffffff'}
+          socials={[
+            {
+              link: {
+                url: 'https://www.linkedin.com/in/danielmhutchings/',
+                target: '_blank',
+              },
+              name: 'LinkedIn',
+              abbreviation: 'LI',
+              icon: 'images/linkedin.svg',
+            },
+            {
+              link: {
+                url: 'https://www.github.com/hutchida',
+                target: '_blank',
+              },
+              name: 'GitHub',
+              abbreviation: 'GH',
+              icon: 'images/github.svg',
+            }
+          ]}
+        />
+        {/* <h1 className={styles.title}>
           HUTCHIDA
         </h1>
-        <p>...under construction...</p>
-        {/* <PageComponentMapper components={components} />
+        <PageComponentMapper components={components} />
         <Section>
           HIYA
         </Section>
