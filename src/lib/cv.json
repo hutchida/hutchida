@@ -1,1 +1,29 @@
-{}
+{
+  "skills": [
+    {
+      "name": "React",
+      "percentage": 70,
+      "description": "Two years full time experience working with React on enterprise websites with global brands."
+    },
+    {
+      "name": "Next JS",
+      "percentage": 80,
+      "description": "Every new project I work on is a Next JS based project."
+    },
+    {
+      "name": "Vanilla JS",
+      "percentage": 60,
+      "description": "I first met Javascript back in 2000 when I studied computing at university."
+    },
+    {
+      "name": "Vue",
+      "percentage": 30,
+      "description": "I've created a number of small SPAs with Vue over the years but have yet to work with it in a commercial setting."
+    },
+    {
+      "name": "Typescript",
+      "percentage": 50,
+      "description": "Typescript is added to every new project I work on during the initial setup."
+    }
+  ]
+}

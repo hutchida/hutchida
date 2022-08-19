@@ -1,7 +1,7 @@
 
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Section, EventsAccordion, Slide, Splash } from 'knit-hutchida/lib'
+import { Section, EventsAccordion, Slide, Splash, HorizontalBar, Navigation } from 'knit-hutchida/lib'
 import data from '../lib/cv.json'
 import { GetStaticProps } from "next";
 import PageComponentMapper from '../lib/mappers/pageComponentMapper'
@@ -22,6 +22,8 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 }
 
+console.log('skills', data.skills)
+
 const Home = (props: any) => {
   const components = props?.pageData?.body
   return (
@@ -32,6 +34,10 @@ const Home = (props: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <Navigation title='HUTCHIDA' links={[
+          { url: '/about', displayName: 'About' },
+          { url: '/portfolio', displayName: 'Portfolio' }
+        ]} />
         <Splash
           profilePic={'images/profilepic.jpeg'}
           subtitle={'Frontend Developer'}
@@ -72,7 +78,13 @@ const Home = (props: any) => {
         <Section className={styles.section} bgColor={"lightblue"}>
           <EventsAccordion {...{ props: { title: 'Experience' }, data: data.experience, }} />
         </Section> */}
+
       </main>
+      {data.skills.map((skill: any) => {
+
+        console.log('skill', skill)
+        return (<HorizontalBar {...skill} />)
+      })}
       <footer className={styles.footer}>
       </footer>
     </div>
