@@ -4,4 +4,5 @@ My name is Daniel Hutchings and I'm a front-end web developer for AKQA Berlin, p
 
 
 [https://twitter.com/hutchida](@hutchida)
+
 [https://www.linkedin.com/in/danielmhutchings/](LinkedIn)
