@@ -1,32 +1,37 @@
 import React from 'react';
 import { ISlide } from './types';
 import { spacingMap, slideSizeMap, descriptionSizeMap } from './maps';
-import { storyblokEditable } from "@storyblok/react";
 
 import {
     Container, SlideItem, Title, Description
 } from './styles';
 
-export const Slide = ({ blok }: ISlide) => {
+export const Slide = ({
+    spacing,
+    bgImage,
+    bgColor,
+    slideWidth,
+    slideHeight,
+    title,
+    description,
+    descriptionSize }: ISlide) => {
     return (
         <Container
-            {...storyblokEditable(blok)}
-            key={blok._uid}
-            $spacing={spacingMap[blok.spacing]}>
+            $spacing={spacingMap[spacing]}>
             <SlideItem
-                $imageUrl={blok.bgImage?.filename}
-                $color={blok.bgColor}
-                $slideWidth={slideSizeMap[blok.slideWidth]}
-                $slideHeight={slideSizeMap[blok.slideHeight]}>
-                {blok.title &&
+                $imageUrl={bgImage?.filename}
+                $color={bgColor}
+                $slideWidth={slideSizeMap[slideWidth]}
+                $slideHeight={slideSizeMap[slideHeight]}>
+                {title &&
                     <Title
-                        $color={blok.bgColor}
-                    >{blok.title}</Title>}
-                {blok.description &&
+                        $color={bgColor}
+                    >{title}</Title>}
+                {description &&
                     <Description
-                        $descriptionSize={descriptionSizeMap[blok.descriptionSize]}
-                        $color={blok.bgColor}
-                    >{blok.description}</Description>}
+                        $descriptionSize={descriptionSizeMap[descriptionSize]}
+                        $color={bgColor}
+                    >{description}</Description>}
             </SlideItem>
         </Container>
     )

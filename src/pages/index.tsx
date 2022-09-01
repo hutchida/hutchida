@@ -35,14 +35,14 @@ const Home = (props: any) => {
       </Head>
       <main className={styles.main}>
         <Navigation title='HUTCHIDA' links={[
-          { url: '/about', displayName: 'About' },
-          { url: '/portfolio', displayName: 'Portfolio' }
+          { url: '#about', displayName: 'About' },
+          { url: '#portfolio', displayName: 'Portfolio' }
         ]} />
         <Splash
           profilePic={'images/profilepic.jpeg'}
-          subtitle={'Frontend Developer'}
+          subtitle={''}
           title={'Daniel Hutchings'}
-          oneliner={'Hands-on Frontend Developer, DIY Fundamentalist, dreams in JSON...'}
+          oneliner={'Hands-on Frontend Developer, with a twist of Python, dreams in JSON, currently working for AKQA, based in Berlin...'}
           bgColor={'#ffffff'}
           socials={[
             {
@@ -62,15 +62,30 @@ const Home = (props: any) => {
               name: 'GitHub',
               abbreviation: 'GH',
               icon: 'images/github.svg',
+            },
+            {
+              link: {
+                url: 'https://codepen.io/hutchida',
+                target: '_blank',
+              },
+              name: 'Codepen',
+              abbreviation: 'CP',
+              icon: 'images/codepen.svg',
             }
           ]}
         />
-        {/* <h1 className={styles.title}>
-          HUTCHIDA
-        </h1>
-        <PageComponentMapper components={components} />
-        <Section>
-          HIYA
+        {/* <PageComponentMapper components={components} /> */}
+        {/* <Section>
+          <div style={{ padding: "4rem 0 2rem" }}>
+            Hello, my name is Daniel Hutchings and I'm a front-end web developer for AKQA Berlin,
+            primarily working with React and Next JS to build enterprise websites for global brands.
+            Before joining the agency world I worked a lot with Python helping companies automate
+            processes.
+          </div>
+          <div style={{ padding: "2rem 0 4rem" }}>
+            I often refer to myself as a "DIY fundamentalist", as there are so many things you can do yourself with 
+            a little bit of knowledge and determination. 
+          </div>
         </Section>
         <Section className={styles.section}>
           <p className={styles.oneLiner}>{data?.oneLiner}</p>
@@ -80,11 +95,11 @@ const Home = (props: any) => {
         </Section> */}
 
       </main>
-      {data.skills.map((skill: any) => {
+      {/* {data.skills.map((skill: any) => {
 
         console.log('skill', skill)
         return (<HorizontalBar {...skill} />)
-      })}
+      })} */}
       <footer className={styles.footer}>
       </footer>
     </div>

@@ -5,11 +5,19 @@ import Feature from '../components/Feature';
 import Slide from '../components/Slide';
 import Page from '../components/Page';
 
-import { storyblokInit, apiPlugin } from '@storyblok/react';
-
+import { storyblokInit, storyblokEditable, apiPlugin } from '@storyblok/react';
+const SlideContainer = (blok: any) => {
+  console.log("blok", blok)
+  return (
+    <div
+      {...storyblokEditable(blok)}
+      key={blok._uid}>
+      <Slide {...blok.blok}></Slide>
+    </div>)
+}
 const components = {
   feature: Feature,
-  slide: Slide,
+  slide: SlideContainer,
   page: Page,
 };
 
