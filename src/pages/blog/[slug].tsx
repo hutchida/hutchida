@@ -1,14 +1,8 @@
-
-import Head from 'next/head'
-import styles from '../../styles/Home.module.css'
-import { Section, EventsAccordion, Slide } from 'knit-hutchida/lib'
-import data from '../../lib/cv.json'
 import { GetStaticProps } from 'next';
 import { GetStaticPaths } from 'next';
-import PageComponentMapper from '../../lib/mappers/pageComponentMapper'
 import { getBlogPageData } from '../../lib/getters/getBlogPageData';
 import { getPublishedBlogPagesPaths } from "../../lib/getters/getBlogPageData";
-
+import { Navigation, BlogPost } from 'knit-hutchida/lib'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const all_paths = await getPublishedBlogPagesPaths();
@@ -18,7 +12,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false // false or 'blocking'
+    fallback: false
   };
 }
 
@@ -27,7 +21,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params?.slug as string;
   const blogPageData = await getBlogPageData(slug);
   let params = {
-    version: 'published', // or 'draft'
+    version: 'published',
   };
 
   if (context.preview) {
@@ -45,11 +39,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 const Page = (props: any) => {
 
   console.log('props', props)
-  return (
-    <main className="px-6" >
-      HI
-    </main>
-  );
+  return (<BlogPost {...props.blogPageData[0]} />);
 }
 
 export default Page

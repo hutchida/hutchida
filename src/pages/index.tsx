@@ -34,10 +34,6 @@ const Home = (props: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Navigation title='HUTCHIDA' links={[
-          { url: '#about', displayName: 'About' },
-          { url: '#portfolio', displayName: 'Portfolio' }
-        ]} />
         <Splash
           profilePic={'images/profilepic.jpeg'}
           subtitle={''}

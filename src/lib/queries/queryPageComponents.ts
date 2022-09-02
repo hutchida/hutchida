@@ -12,6 +12,7 @@ export const QUERY_PAGE_COMPONENTS = (
       info
       subject
       text
+      inportfolio
     }
   }
 }
