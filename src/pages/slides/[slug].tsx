@@ -36,8 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params?.slug as string;
-  console.log('slug', slug)
-  const pageData = await getPageData(slug || 'home');
+  const pageData = await getPageData(`slides/${slug}` || 'home');
   console.log("pageData", pageData)
   const components = pageData.body
   let params = {
@@ -49,12 +48,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 
   const storyblokApi = getStoryblokApi();
-  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, params);
+  // let { data } = await storyblokApi.get(`cdn/stories/${slug}`, params);
 
   return {
     props: {
-      story: data ? data.story : false,
-      key: data ? data.story.id : false,
       preview: context.preview || false,
       components
     },
@@ -67,7 +64,6 @@ const Home = ({ story, preview, components }: any) => {
   console.log('components', components)
   return (
     <main className="px-6" >
-      {/* <StoryblokComponent blok={story.content} /> */}
       <PageComponentMapper components={components} />
     </main>
   );

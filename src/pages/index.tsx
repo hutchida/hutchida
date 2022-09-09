@@ -35,7 +35,7 @@ const Home = (props: any) => {
       </Head>
       <main className={styles.main}>
         <Splash
-          profilePic={'images/profilepic.jpeg'}
+          profilePic={'images/twitter-profile-pic.jpeg'}
           subtitle={''}
           title={'Daniel Hutchings'}
           oneliner={'Hands-on Frontend Developer, with a twist of Python, dreams in JSON, currently working for AKQA, based in Berlin...'}
