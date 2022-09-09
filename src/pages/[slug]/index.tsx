@@ -22,8 +22,8 @@ import {
  * @returns
  */
 export const getStaticPaths: GetStaticPaths = async () => {
-  const all_paths = await getPublishedPagesPaths();
-  const paths = all_paths.map((page: any) => ({
+  const allRootPaths = await getPublishedPagesPaths();
+  let paths = allRootPaths.map((page: any) => ({
     params: { slug: page.slug },
   }))
 
@@ -36,9 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params?.slug as string;
-  console.log('slug', slug)
   const pageData = await getPageData(slug || 'home');
-  console.log("pageData", pageData)
   const components = pageData.body
   let params = {
     version: 'published', // or 'draft'

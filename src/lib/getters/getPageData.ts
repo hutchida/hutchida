@@ -27,7 +27,22 @@ export async function getPublishedPagesPaths(
   ) {
     let data;
     try {
-      data = await Storyblok.get(`cdn/stories/`, {})
+      data = await Storyblok.get(`cdn/stories/`, {"starts_with": ""})
+    } catch (error: any) {
+      console.log(error);
+    }
+    data = data?.data?.stories?.filter((page:any)=>{return(page.content.component === 'page')})
+    return data
+   
+}
+
+
+export async function getPublishedSlideshowPaths(  
+  ) {
+    let data;
+    try {
+      data = await Storyblok.get(`cdn/stories/`, {
+        "starts_with": "slides/"})
     } catch (error: any) {
       console.log(error);
     }
