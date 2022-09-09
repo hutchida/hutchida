@@ -3,19 +3,6 @@ import type { AppProps } from 'next/app'
 import 'knit-hutchida/lib/style.css'
 import { Navigation } from 'knit-hutchida';
 
-if (typeof window !== 'undefined') {
-  const { StoryblokBridge, location } = window
-  const storyblokInstance = new StoryblokBridge()
-
-  storyblokInstance.on(['published', 'change'], () => {
-    // reload page if save or publish is clicked
-    location.reload(true)
-  })
-}
-
-
-
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
