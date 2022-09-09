@@ -1,15 +1,24 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-
-import { storyblokInit, apiPlugin } from '@storyblok/react';
-
+import 'knit-hutchida/lib/style.css'
+import { Navigation } from 'knit-hutchida';
 import Feature from '../components/Feature';
 import Slide from '../components/Slide';
 import Page from '../components/Page';
+import { storyblokInit, storyblokEditable, apiPlugin } from '@storyblok/react';
+const SlideContainer = (blok: any) => {
+  console.log("blok", blok)
+  return (
+    <div
+      {...storyblokEditable(blok)}
+      key={blok._uid}>
+      <Slide {...blok.blok}></Slide>
+    </div>)
+}
 
 const components = {
   feature: Feature,
-  slide: Slide,
+  slide: SlideContainer,
   page: Page,
 };
 
@@ -20,7 +29,15 @@ storyblokInit({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Navigation title='HUTCHIDA' links={[
+        { url: '#about', displayName: 'About' },
+        { url: '#portfolio', displayName: 'Portfolio' }
+      ]} />
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp

@@ -5,6 +5,7 @@ const nextConfig = {
     // Enables the styled-components SWC transform
     styledComponents: true
   },
+  exportTrailingSlash: true,
 }
 
 module.exports = nextConfig
