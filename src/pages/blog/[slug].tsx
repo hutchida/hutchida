@@ -1,12 +1,13 @@
 import { GetStaticProps } from 'next';
 import { GetStaticPaths } from 'next';
-import { getBlogPageData } from '../../lib/getters/getBlogPageData';
-import { getPublishedBlogPagesPaths } from "../../lib/getters/getBlogPageData";
-import { Navigation, BlogPost } from 'knit-hutchida/lib'
+import { getBlogPageData } from '../../lib/getters/getDatoCMSData';
+import { getPublishedBlogPagesPaths } from "../../lib/getters/getDatoCMSData";
+import { BlogPost } from 'knit-hutchida/lib'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const all_paths = await getPublishedBlogPagesPaths();
-  const paths = all_paths.map((page: any) => ({
+  const allBlogs = await getPublishedBlogPagesPaths();
+  console.log("allBlogs", allBlogs)
+  const paths = allBlogs.map((page: any) => ({
     params: { slug: page.slug },
   }))
 
