@@ -1,30 +1,24 @@
 import React from "react";
-import { storyblokInit, apiPlugin } from '@storyblok/react';
 
 import {
   Section,
   EventsAccordion,
-  Slide
+  Slide,
+  RichText,
+  Tumbleweed,
+  SketchBox,
+  Splash
 } from 'knit-hutchida/lib'
 
 
 let Components: any = {};
-Components["Section"] = Section;
-Components["EventsAccordion"] = EventsAccordion;
-Components["Slide"] = Slide;
-
-const componentsMap = {
-  section: "Section",
-  eventsAccordion: "EventsAccordion",
-  slide: "Slide",
-};
-
-storyblokInit({
-  accessToken: '1JIP9C8i6yPABNQVN9aWIwtt',
-  use: [apiPlugin],
-  components: Components,
-});
-
+Components["SectionRecord"] = Section;
+Components["EventsAccordionRecord"] = EventsAccordion;
+Components["SlideRecord"] = Slide;
+Components["RichTextRecord"] = RichText;
+Components["TumbleWeedRecord"] = Tumbleweed;
+Components["SketchboxRecord"] = SketchBox;
+Components["SplashRecord"] = Splash;
 
 /**
  * Component mapper for generic pages.
@@ -37,21 +31,21 @@ const PageComponentMapper = ({
   // If you print the components list here to the browser console and you see a component
   // in the array without any data, it will be because the query is non-existent
   // If the page gives you a 404 it may well be because a query is incorrect
+  console.log('components', components)
   return (
     <>
       {components?.map((component: any, index: number) => {
-        const componentName =
-          (componentsMap as any)[component.component];
+        let cmsComponentName = component.__typename
         let componentOutput;
-        if (componentName) {
-          const CurrentBlock = Components[componentName];
+        if (cmsComponentName) {
+          const CurrentBlock = Components[cmsComponentName];
           if (!CurrentBlock) {
-            console.log(CurrentBlock, componentName, component.__typename);
+            console.log(CurrentBlock, cmsComponentName, component.__typename);
           }
           componentOutput = (
             <CurrentBlock
               {...component}
-              key={`components-${componentName}-${index}`}
+              key={`components-${cmsComponentName}-${index}`}
             />)
           return componentOutput;
         }

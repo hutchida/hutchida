@@ -12,9 +12,10 @@
   "dependencies": {
     "@storyblok/react": "^1.0.11",
     "axios": "^0.27.2",
-    "knit-hutchida": "^1.0.48",
+    "knit-hutchida": "^1.0.52",
     "next": "12.1.6",
     "react": "18.1.0",
+    "react-datocms": "^3.0.12",
     "react-dom": "18.1.0",
     "storyblok": "^3.10.5",
     "storyblok-js-client": "^4.5.5"

@@ -6,13 +6,70 @@ export const QUERY_PAGE_COMPONENTS = (
     title
     slug
     content {
-      __typename
-      date
-      id
-      info
-      subject
-      text
-      inportfolio
+      ... on SplashRecord {
+        __typename
+        id
+        bgcolor
+        oneliner
+        subtitle
+        title
+        heroImage {
+          responsiveImage(
+            imgixParams: { fit: crop, w: 1000, auto: format }
+          ) {
+            srcSet
+            webpSrcSet
+            sizes
+            src
+            width
+            height
+            aspectRatio
+            alt
+            title
+            bgColor
+            base64
+          }
+        }
+        backgroundImage {
+          responsiveImage(
+            imgixParams: { fit: crop, w: 1000, auto: format }
+          ) {
+            srcSet
+            webpSrcSet
+            sizes
+            src
+            width
+            height
+            aspectRatio
+            alt
+            title
+            bgColor
+            base64
+          }
+        }
+        socials {
+          link {
+            displayName
+            target
+            url
+          }
+          id
+          abrreviation
+          name
+          icon {
+            responsiveImage {
+              src
+            }
+          }
+        }
+      }
+      ... on SketchboxRecord {
+        __typename
+        id
+        alignment
+        description
+        opacity
+      }
     }
   }
 }

@@ -23,9 +23,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     params.version = 'draft';
   }
 
+  console.log('pageData', pageData)
+
   return {
     props: {
-      components: pageData?.components || null
+      components: pageData || null
     },
     revalidate: 3600,
   };

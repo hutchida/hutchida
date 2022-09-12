@@ -6,7 +6,6 @@ import { BlogPost } from 'knit-hutchida/lib'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const allBlogs = await getPublishedBlogPagesPaths();
-  console.log("allBlogs", allBlogs)
   const paths = allBlogs.map((page: any) => ({
     params: { slug: page.slug },
   }))
@@ -39,7 +38,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const Page = (props: any) => {
 
-  console.log('props', props)
   return (<BlogPost {...props.blogPageData[0]} />);
 }
 

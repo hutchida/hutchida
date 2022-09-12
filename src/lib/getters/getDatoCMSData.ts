@@ -87,7 +87,6 @@ try {
     console.log(error);    
   }
   // @TODO to improve: if data.errors => something's wrong with the query
-  console.log('publishedPages',data)
   return data?.data?.allBlogs;
    
 }

@@ -86,7 +86,7 @@
     "core-js-pure" "^3.20.2"
     "regenerator-runtime" "^0.13.4"
 
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.16.3":
+"@babel/runtime@^7.10.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3":
   "integrity" "sha512-38Y8f7YUhce/K7RMwTp7m0uCumpv9hZkitCbBClqQIow1qSbCvGkcegKOXpEWCQLfWmevgRiWokZ1GkpfhbZug=="
   "resolved" "https://registry.npmjs.org/@babel/runtime/-/runtime-7.18.3.tgz"
   "version" "7.18.3"
@@ -513,6 +513,11 @@
     "@babel/runtime" "^7.10.2"
     "@babel/runtime-corejs3" "^7.10.2"
 
+"array-flatten@^3.0.0":
+  "integrity" "sha512-zPMVc3ZYlGLNk4mpK1NzP2wg0ml9t7fUgDsayR5Y5rSzxQilzR9FGu/EH2jQOcKSAeAfWeylyW8juy3OkWRvNA=="
+  "resolved" "https://registry.npmjs.org/array-flatten/-/array-flatten-3.0.0.tgz"
+  "version" "3.0.0"
+
 "array-includes@^3.1.4", "array-includes@^3.1.5":
   "integrity" "sha512-iSDYZMMyTPkiFasVqfuAQnWAYcvO/SeBSCGKePoEthjp4LEMTe4uLc7b025o4jAZpHhihh8xPo99TNWUWWkGDQ=="
   "resolved" "https://registry.npmjs.org/array-includes/-/array-includes-3.1.5.tgz"
@@ -872,6 +877,25 @@
   "resolved" "https://registry.npmjs.org/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz"
   "version" "1.0.8"
 
+"datocms-listen@^0.1.9":
+  "integrity" "sha512-DfHnl89eMw0KiHpAGnzcZmzOwitEIQgJgPdt4NVUwo82Smh7MhZzAbBTkbsG2qinB545xSX5XLPxYEs2gQ5m4Q=="
+  "resolved" "https://registry.npmjs.org/datocms-listen/-/datocms-listen-0.1.9.tgz"
+  "version" "0.1.9"
+
+"datocms-structured-text-generic-html-renderer@^2.0.1":
+  "integrity" "sha512-Rv5Y1eC9NZXNSz3FHvHGFvGnKEEbvG1kQWlylpCSoeDBZPBwSWAFD/ixIAOfa8Yk1EVpmoQd3KQd725WKYJwRQ=="
+  "resolved" "https://registry.npmjs.org/datocms-structured-text-generic-html-renderer/-/datocms-structured-text-generic-html-renderer-2.0.4.tgz"
+  "version" "2.0.4"
+  dependencies:
+    "datocms-structured-text-utils" "^2.0.4"
+
+"datocms-structured-text-utils@^2.0.1", "datocms-structured-text-utils@^2.0.4":
+  "integrity" "sha512-JxDdJaipm3FePOli9s82MRrBDnlPP9GYhqajQJaYEu4V1jwUSZzbVkYVKMfVHUfP0Gh0VSCxPHjAGGAN1nWMJg=="
+  "resolved" "https://registry.npmjs.org/datocms-structured-text-utils/-/datocms-structured-text-utils-2.0.4.tgz"
+  "version" "2.0.4"
+  dependencies:
+    "array-flatten" "^3.0.0"
+
 "debug@^2.6.9":
   "integrity" "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="
   "resolved" "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz"
@@ -932,6 +956,11 @@
   "integrity" "sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ=="
   "resolved" "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz"
   "version" "1.0.0"
+
+"dequal@^2.0.2":
+  "integrity" "sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA=="
+  "resolved" "https://registry.npmjs.org/dequal/-/dequal-2.0.3.tgz"
+  "version" "2.0.3"
 
 "detective@^5.2.1":
   "integrity" "sha512-v9XE1zRnz1wRtgurGu0Bs8uHKFSTdteYZNbIPFVhUZ39L/S79ppMpdmVOZAnoz1jfEFodc48n6MX483Xo3t1yw=="
@@ -1955,10 +1984,10 @@
   dependencies:
     "json-buffer" "3.0.0"
 
-"knit-hutchida@^1.0.46":
-  "integrity" "sha512-HD99jFBs8uG0twfnNl2XX5zx0ayd+penisj2ln0eaQcSvF9qfH+2s7dNApzU5/QPJsVB95E/p1iisXsSsPw7KQ=="
-  "resolved" "https://registry.npmjs.org/knit-hutchida/-/knit-hutchida-1.0.46.tgz"
-  "version" "1.0.46"
+"knit-hutchida@^1.0.52":
+  "integrity" "sha512-tQOs74WwJbQeRAApAyDtXqDBjBA2Z+BVRPM2ZzIfavypL7pNa2G3I319Mb+HcLn0TNuuwotTLuPiXBZtfKzuhg=="
+  "resolved" "https://registry.npmjs.org/knit-hutchida/-/knit-hutchida-1.0.52.tgz"
+  "version" "1.0.52"
   dependencies:
     "@tailwindcss/line-clamp" "^0.4.0"
     "babel" "^6.23.0"
@@ -2546,6 +2575,19 @@
     "minimist" "^1.2.0"
     "strip-json-comments" "~2.0.1"
 
+"react-datocms@^3.0.12":
+  "integrity" "sha512-BXT6BN0J5rnk0vjyiDddSjalAq0zpqVrS/k1aBMMvfmLr0IA/Ex2iuDkkpHucxOQy/86v2njz6GCc06wbhTxbQ=="
+  "resolved" "https://registry.npmjs.org/react-datocms/-/react-datocms-3.1.1.tgz"
+  "version" "3.1.1"
+  dependencies:
+    "datocms-listen" "^0.1.9"
+    "datocms-structured-text-generic-html-renderer" "^2.0.1"
+    "datocms-structured-text-utils" "^2.0.1"
+    "react-intersection-observer" "^8.33.1"
+    "react-string-replace" "^1.1.0"
+    "universal-base64" "^2.1.0"
+    "use-deep-compare-effect" "^1.6.1"
+
 "react-dom@^17.0.2 || ^18.0.0-0", "react-dom@^18.1.0", "react-dom@>= 16.8.0", "react-dom@18.1.0":
   "integrity" "sha512-fU1Txz7Budmvamp7bshe4Zi32d0ll7ect+ccxNu9FlObT605GOEB8BfO4tmRJ39R5Zj831VCpvQ05QPBW5yb+w=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.1.0.tgz"
@@ -2554,12 +2596,22 @@
     "loose-envify" "^1.1.0"
     "scheduler" "^0.22.0"
 
+"react-intersection-observer@^8.33.1":
+  "integrity" "sha512-TYKh52Zc0Uptp5/b4N91XydfSGKubEhgZRtcg1rhTKABXijc4Sdr1uTp5lJ8TN27jwUsdXxjHXtHa0kPj704sw=="
+  "resolved" "https://registry.npmjs.org/react-intersection-observer/-/react-intersection-observer-8.34.0.tgz"
+  "version" "8.34.0"
+
 "react-is@^16.13.1", "react-is@^16.7.0", "react-is@>= 16.8.0":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
-"react@^17.0.2 || ^18.0.0-0", "react@^18.1.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@18.1.0":
+"react-string-replace@^1.1.0":
+  "integrity" "sha512-N6RalSDFGbOHs0IJi1H611WbZsvk3ZT47Jl2JEXFbiS3kTwsdCYij70Keo/tWtLy7sfhDsYm7CwNM/WmjXIaMw=="
+  "resolved" "https://registry.npmjs.org/react-string-replace/-/react-string-replace-1.1.0.tgz"
+  "version" "1.1.0"
+
+"react@^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.1.0", "react@>= 16.12.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.13", "react@18.1.0":
   "integrity" "sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.1.0.tgz"
   "version" "18.1.0"
@@ -3056,6 +3108,11 @@
   dependencies:
     "crypto-random-string" "^2.0.0"
 
+"universal-base64@^2.1.0":
+  "integrity" "sha512-WeOkACVnIXJZr/qlv7++Rl1zuZOHN96v2yS5oleUuv8eJOs5j9M5U3xQEIoWqn1OzIuIcgw0fswxWnUVGDfW6g=="
+  "resolved" "https://registry.npmjs.org/universal-base64/-/universal-base64-2.1.0.tgz"
+  "version" "2.1.0"
+
 "universalify@^2.0.0":
   "integrity" "sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ=="
   "resolved" "https://registry.npmjs.org/universalify/-/universalify-2.0.0.tgz"
@@ -3094,6 +3151,14 @@
   "version" "3.0.0"
   dependencies:
     "prepend-http" "^2.0.0"
+
+"use-deep-compare-effect@^1.6.1":
+  "integrity" "sha512-kbeNVZ9Zkc0RFGpfMN3MNfaKNvcLNyxOAAd9O4CBZ+kCBXXscn9s/4I+8ytUER4RDpEYs5+O6Rs4PqiZ+rHr5Q=="
+  "resolved" "https://registry.npmjs.org/use-deep-compare-effect/-/use-deep-compare-effect-1.8.1.tgz"
+  "version" "1.8.1"
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    "dequal" "^2.0.2"
 
 "util-deprecate@^1.0.2":
   "integrity" "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw=="
