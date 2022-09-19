@@ -6,6 +6,16 @@ export const QUERY_PAGE_COMPONENTS = (
     title
     slug
     content {
+      ... on RichTextRecord {
+        __typename
+        id
+        text
+      }
+      ... on SpacerRecord {
+        __typename
+        id
+        size
+      }
       ... on SplashRecord {
         __typename
         id
@@ -97,7 +107,14 @@ export const QUERY_BLOG_COMPONENTS = (
 export const QUERY_PUBLISHED_BLOG_PATHS = (published: boolean = true) => `{
   allBlogs {
     id
-    slug        
+    slug
+    title
+    summary
+    portfolioInclude
+    content {
+      date
+      id
+    }
   }
 }
 `;

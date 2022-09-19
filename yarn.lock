@@ -1984,10 +1984,10 @@
   dependencies:
     "json-buffer" "3.0.0"
 
-"knit-hutchida@^1.0.52":
-  "integrity" "sha512-tQOs74WwJbQeRAApAyDtXqDBjBA2Z+BVRPM2ZzIfavypL7pNa2G3I319Mb+HcLn0TNuuwotTLuPiXBZtfKzuhg=="
-  "resolved" "https://registry.npmjs.org/knit-hutchida/-/knit-hutchida-1.0.52.tgz"
-  "version" "1.0.52"
+"knit-hutchida@^1.0.55":
+  "integrity" "sha512-IjlltSSgmKLnQXqV6giv/KcgeWwuXaSrezxq93Ml0x54GWCcwNtR+ij1e2fc1oqVn92yqJh8JmzA6hv0K9XoCw=="
+  "resolved" "https://registry.npmjs.org/knit-hutchida/-/knit-hutchida-1.0.55.tgz"
+  "version" "1.0.55"
   dependencies:
     "@tailwindcss/line-clamp" "^0.4.0"
     "babel" "^6.23.0"

@@ -7,7 +7,8 @@ import {
   RichText,
   Tumbleweed,
   SketchBox,
-  Splash
+  Splash,
+  Spacer
 } from 'knit-hutchida/lib'
 
 
@@ -19,6 +20,7 @@ Components["RichTextRecord"] = RichText;
 Components["TumbleWeedRecord"] = Tumbleweed;
 Components["SketchboxRecord"] = SketchBox;
 Components["SplashRecord"] = Splash;
+Components["SpacerRecord"] = Spacer;
 
 /**
  * Component mapper for generic pages.
